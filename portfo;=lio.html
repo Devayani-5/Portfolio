@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Name | Portfolio</title>
+  <!-- ✅ Google Font: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --main-color: #6366f1;
+      --accent-color: #22d3ee;
+      --text-color: #1e293b;
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --radius: 14px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #f0f4ff, #e0f7fa);
+      color: var(--text-color);
+    }
+
+    /* Profile Photo */
+    .top-photo {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+      object-fit: cover;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 3.5rem 1rem;
+      background: linear-gradient(135deg, #858ec0, #5a64a1);
+      color: white;
+      border-bottom: 2px solid #e0e7ff;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #e0e7ff;
+    }
+
+    /* Navbar */
+    nav {
+      background: #ffffff;
+      padding: 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    nav a {
+      color: #1f2937;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--main-color);
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0%;
+      height: 2px;
+      background-color: var(--main-color);
+      transition: width 0.3s ease-in-out;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--main-color);
+      border-left: 5px solid var(--accent-color);
+      padding-left: 0.75rem;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: var(--radius);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: slideUp 0.6s ease forwards;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.2s; }
+    .card:nth-child(2) { animation-delay: 0.4s; }
+    .card:nth-child(3) { animation-delay: 0.6s; }
+
+    .card h3 {
+      color: var(--main-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .card p, .card ul, .card li {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #475569;
+    }
+
+    .card ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .contact a {
+      color: var(--main-color);
+      text-decoration: none;
+    }
+
+    footer {
+      background: #e2e8f0;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #475569;
+      border-top: 1px solid #cbd5e1;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      nav a {
+        display: block;
+        margin: 0.5rem 0;
+      }
+
+      .top-photo {
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Profile Photo -->
+  <img src="img.jpg" alt="Profile" class="top-photo">
+  <!-- Replace with your image link -->
+
+  <!-- Header -->
+  <header>
+    <h1>Gundapu Devayani</h1>
+    <p>Junior Frontend Developer | Problem Solver | Passionate Coder</p>
+  </header>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#resume">Resume</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- About Section -->
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="card">
+        <p>
+            Eager to begin my career journey, I am looking for an entry-level role where I can learn, adapt, and build valuable skills from the ground up.
+        </p>
+      </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume">
+      <h2>Resume</h2>
+
+      <div class="card">
+        <h3>Personal Details</h3>
+        <ul>
+          <li><strong>Name:</strong>Gundapu Devayani</li>
+          <li><strong>Email:</strong>devayanidivine@gmail.com</li>
+          <li><strong>Phone:</strong>9346305734</li>
+          <li><strong>Location:</strong>Vizag, Andhra Pradesh, India</li>
+          <li><strong>Date of Birth:</strong> August 05, 2004</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Education</h3>
+        <ul>
+          <li>B.Tech in Computer Science and Engineering –Anil Neerukonda Institute Of Technology and Sciences (2022 – 2026)
+        </li>
+          <li>Diploma– Govt Polytechnic for Women(srikakulam)(2020 – 2023)
+        </li>
+        <li>10th Standard - ST.Joseph's High School (ICSE ,2020)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Skills</h3>
+        <ul>
+          <li>HTML, CSS, JavaScript,NodeJS, Express, MOngoDB</li>
+          <li>C, C++, Java, Python</li>
+        </ul>
+      </div>
+
+      
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="card">
+        <h3>Web based e-commerce website(Women Collections)</h3>
+        <p>  Web-Based E-Commerce Website (Women Collections)– An online shopping platform for men’s fashion, featuring product listings, secure 
+        </p>
+      </div>
+      <div class="card">
+        <h3>Online bookstore
+        </h3>
+        <p> A web application for browsing, ordering, and tracking books with secure payments (Razorpay) and real-time order management.
+        </p> 
+        <h3>Calculator
+        </h3> 
+        <p> A web-based application for performing basic arithmetic operations with a user-friendly interfac
+        </p>  
+        <h3>Career Craft
+        </h3>  
+        <p>Career Craft is a platform designed to guide individuals in exploring career paths, building skills, and finding job opportunities.</p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card contact">
+        <p>Email: <a href="devayanidivine@gmail.com">devayanidivine@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/Devayani Gundapu" target="_blank">Devayani Gundapu</a></p>
+        <p>GitHub: <a href="https://github.com/Devayani-5" target="_blank">Devayani-5</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Your Name. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
+m.html
+Displaying m.html.
+
+
+
+Your download's being scanned. We'll let you know if there's an issue.
